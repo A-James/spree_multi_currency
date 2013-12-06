@@ -30,6 +30,11 @@ And then run:
 
     $ rails generate spree_multi_currency:install
 
+Use the partial to render it anywhere in your layout:
+
+``` ruby
+<%= render partial: "spree/shared/subdomain_selector" %>
+```
 
 TODO
 ====

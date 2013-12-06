@@ -1,0 +1,8 @@
+<% if Spree::Config[:show_currency_selector] %>
+  <%= select_tag 'currency', options_for_select(Spree::Subdomain.all.collect {|s| [ s.description, s.name ] }, :selected => [Spree::Subdomain.current(request.subdomain).description, Spree::Subdomain.current(request.subdomain).name]) %>
+   <script>
+    $('#currency').on('change', function(event){
+      window.location = '//' + $(this).val() + '.<%= Spree::Config[:site_url] %>';
+    });
+   </script>
+ <% end %>
